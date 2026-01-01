@@ -3,16 +3,17 @@
     <h1>Create Todo</h1>
     <form method="POST" action="registerTodo" @submit.prevent="registerTodo">
       <div>
-        <label for="title">Title</label>
-        <input id="title" name="title" type="text" v-model="title" />
-
-        <br />
-        <label for="is_completed">Completed</label>
-        <input id="is_completed" name="is_completed" type="checkbox" v-model="is_completed" />
+        <div class="form-content">
+          <label for="title">Title</label>
+          <input id="title" name="title" type="text" v-model="title" />
+        </div>
+        <div class="form-content">
+          <label for="is_completed">Completed</label>
+          <input id="is_completed" name="is_completed" type="checkbox" v-model="is_completed" />
+        </div>
       </div>
       <button type="submit">登録</button>
     </form>
-
     <RouterLink to="/">一覧に戻る</RouterLink>
   </div>
 </template>

@@ -3,14 +3,14 @@
     <h1>Todo List</h1>
     <p>{{ test }}</p>
 
-    <ul>
+    <ul v-if="todos.length > 0">
       <li v-for="todo in todos" :key="todo.id">
         {{ todo.title }}
       </li>
     </ul>
+    <p v-else>Todoはありません</p>
 
-
-    <RouterLink to="/todo/create">Create New Todo</RouterLink>
+    <RouterLink to="/todo/create">Todoを作成</RouterLink>
   </div>
 </template>
 
@@ -26,11 +26,11 @@ const todos = ref<ToDo[]>([]);
 
 onMounted(async () => {
   try {
-    todos.value = await getTodos()
+    const response = await getTodos()
+    todos.value = response.todos
   } catch(error) {
     console.error(error)
   }
-  
   console.log(todos.value)
 })
 </script>
