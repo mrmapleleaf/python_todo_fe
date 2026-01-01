@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { getTodos } from '@/services/todoClient'
+import { getTodos } from '@/composables/todoClient'
 import { onMounted } from 'vue'
 import { ToDo } from '@/types/todo';
 import { ref } from 'vue';

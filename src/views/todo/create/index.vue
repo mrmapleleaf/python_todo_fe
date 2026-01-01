@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { createTodo } from '@/services/todoClient';
+import { createTodo } from '@/composables/todoClient';
 
 const title = ref<string>('');
 const is_completed = ref<boolean>(false);
