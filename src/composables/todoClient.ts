@@ -6,11 +6,16 @@ const apliClient = axios.create({
 });
 
 export const getTodos = async () => {
-  const response = await apliClient.get('/todos/');
+  const response = await apliClient.get('/todos');
   return response.data;
 }
 
 export const createTodo = async (title: string, is_completed: boolean) => {
-  const response = await apliClient.post('/todo/create/', { title, is_completed });
+  const response = await apliClient.post('/todo/create', { title, is_completed });
+  return response.data;
+}
+
+export const getTodoDetail = async (id: number) => {
+  const response = await apliClient.get(`/todo/${id}`);
   return response.data;
 }

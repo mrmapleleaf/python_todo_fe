@@ -5,12 +5,14 @@
 
     <ul v-if="todos.length > 0">
       <li v-for="todo in todos" :key="todo.id">
-        {{ todo.title }}
+        <router-link :to="`/todo/${todo.id}`">
+          {{ todo.title }}
+        </router-link>
       </li>
     </ul>
     <p v-else>Todoはありません</p>
 
-    <RouterLink to="/todo/create">Todoを作成</RouterLink>
+    <router-link to="/todo/create">Todoを作成</router-link>
   </div>
 </template>
 
